@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">  
+<html>  
+ <head>  
+  <title> New Document </title>  
+  <meta name="Generator" content="EditPlus">  
+  <meta name="Author" content="">  
+  <meta name="Keywords" content="">  
+  <meta name="Description" content="">  
+  <style type="text/css">  
+  
+    .wraper {  
+        position: relative;  
+        float: left;  
+        width: 150px;  
+        height: 150px;  
+        border: 1px solid black;  
+        padding: 10px;  
+        margin: 10px;  
+    }  
+  
+    .wraper div {  
+        height: 0px;  
+    }  
+  
+    .d1 {  
+        width: 0px;  
+        margin: 0 auto;  
+        border-left: 50px solid transparent;  
+        border-right: 50px solid transparent;  
+        border-bottom: 100px solid;  
+        color: black;  
+    }  
+  
+    .d2 {  
+        width: 50px;  
+        margin: 0 auto;  
+        border-bottom: 100px solid;  
+        color: orange;  
+    }  
+  
+    .d3 {  
+        width: 0px;  
+        margin: 0 auto;  
+        border-left: 50px solid transparent;  
+        border-right: 50px solid transparent;  
+        border-bottom: 100px solid;  
+        border-left-color: black;
+        border-right-color: red;
+        border-bottom-color: yellow;  
+    }  
+      
+    .d4 {  
+        width: 0px;  
+        margin: 0 auto;  
+        border-left: 50px solid transparent;  
+        border-right: 50px solid transparent;  
+        border-bottom: 100px solid;  
+        outline-color: green;
+        outline-width: 10px;
+        outline-style: solid;  
+    }  
+      
+    .d5 {  
+        width: 30px;  
+        margin: 0 auto;  
+        border-right: 50px solid transparent;  
+        border-left:  50px solid transparent;
+        border-bottom: 100px solid;  
+        color: black;  
+    }  
+  
+  </style>  
+ </head>  
+  
+ <body>  
+  <div class="wraper">  
+    <div class="d1"></div>  
+  </div>  
+  <div class="wraper">  
+    <div class="d2"></div>  
+  </div>  
+  <div class="wraper">  
+    <div class="d3"></div>  
+  </div>  
+  <div class="wraper">  
+    <div class="d4"></div>  
+  </div>  
+  <div class="wraper">  
+    <div class="d5"></div>  
+  </div>  
+
+  <div>
+   <!-- 添加canvas标签，并加上红色边框以便于在页面上查看 -->
+<canvas id="myCanvas" width="200px" height="200px" style="border: 1px solid green;">
+您的浏览器不支持canvas标签。
+</canvas>
+
+<script type="text/javascript">
+//获取Canvas对象(画布)
+var canvas = document.getElementById("myCanvas");
+//简单地检测当前浏览器是否支持Canvas对象，以免在一些不支持html5的浏览器中提示语法错误
+if(canvas.getContext){  
+    //获取对应的CanvasRenderingContext2D对象(画笔)
+    var ctx = canvas.getContext("2d");  
+    
+   
+    //开始一个新的绘制路径
+    ctx.beginPath();
+    //设置线条颜色为黑色
+    ctx.strokeStyle = "black";
+    
+    //设置路径起点坐标
+   
+    ctx.moveTo(10, 100);
+    ctx.lineWidth = 5;
+    ctx.lineTo(50, 50);
+    ctx.lineWidth = 5;
+    ctx.lineTo(90, 100);    
+    //先关闭绘制路径。注意，此时将会使用直线连接当前端点和起始端点。
+    //ctx.closePath();
+ 
+    //最后，按照绘制路径画出直线
+    ctx.stroke();
+}
+</script>
+</body>
+  </div>
+ </body>  
+</html>  
